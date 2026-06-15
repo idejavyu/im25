@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AR Сатурн</title>
+  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+
+  <a-scene embedded arjs="debugUIEnabled: false;">
+      
+      <a-marker type="pattern" url="../images/pattern-marker.patt">
+          
+          <a-entity id="tilt-container" rotation="27 0 0">
+              <a-entity id="rotation-container" 
+                        animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear">
+                  
+                  <a-sphere 
+                      radius="0.5" 
+                      src="../images/2k_saturn.jpg" 
+                      segments-width="64" 
+                      segments-height="32">
+                  </a-sphere>
+
+                  <a-ring 
+                      radius-inner="0.6" 
+                      radius-outer="1.1" 
+                      rotation="-90 0 0" 
+                      material="src: ../images/2k_saturn_ring_alpha.png; transparent: true; side: double; opacity: 0.9">
+                  </a-ring>
+              </a-entity>
+          </a-entity>
+
+      </a-marker>
+
+      <a-entity camera></a-entity>
+  </a-scene>
+
+</body>
+</html>

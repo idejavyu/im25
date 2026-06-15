@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <title>AR Maze — A*, Dijkstra, Q-learning</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { margin:0; overflow:hidden; font-family: sans-serif; }
+    #ui { position: absolute; top:10px; left:10px; z-index: 10; background: rgba(255,255,255,0.9); padding:8px; border-radius:6px; }
+    button{ margin:4px 0; display:block; width:200px; }
+  </style>
+</head>
+<body>
+  <div id="ui">
+    <button id="btn-place">Place maze (tap a surface)</button>
+    <button id="btn-a">Run A*</button>
+    <button id="btn-d">Run Dijkstra</button>
+    <button id="btn-rl">Train RL & apply</button>
+    <div id="status"></div>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

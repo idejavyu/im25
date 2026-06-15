@@ -1,0 +1,38 @@
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4 об'єкти</title>
+      <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  
+  
+</head>
+<body>
+  <script src="hw6.js"></script>
+
+  <a-scene embedded arjs="debugUIEnabled: false;">
+
+  <a-marker id="markerA" type="pattern" url="../images/A.patt"><a-sphere radius="0.05" color="red"></a-sphere></a-marker>
+  <a-marker id="markerB" type="pattern" url="../images/B.patt"><a-sphere radius="0.05" color="green"></a-sphere></a-marker>
+  <a-marker id="markerC" type="pattern" url="../images/C.patt"><a-sphere radius="0.05" color="blue"></a-sphere></a-marker>
+  <a-marker id="markerD" type="pattern" url="../images/D.patt"><a-sphere radius="0.05" color="yellow"></a-sphere>
+
+  <a-entity id="results" 
+            geometry-calculator 
+            position="0 0 0" 
+            rotation="-90 0 0"
+            text="value: Waiting; color: black; align: center; width: 5;">
+  </a-entity></a-marker>
+
+  <a-entity id="lineAB" line="color: red"></a-entity>
+  <a-entity id="lineBC" line="color: green"></a-entity>
+  <a-entity id="lineCD" line="color: blue"></a-entity>
+  <a-entity id="lineDA" line="color: yellow"></a-entity>
+  </a-marker>
+
+  <a-entity camera></a-entity>
+
+  </a-scene>
+</body>
+</html>

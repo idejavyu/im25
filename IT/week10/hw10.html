@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hand Angle Detector</title>
+    <style>
+        #container { position: relative; width: 640px; height: 480px; }
+        #my-video { position: absolute; top: 0; left: 0; width: 100%; }
+        #angles-result { 
+            position: absolute; 
+            top: 10px; 
+            left: 10px; 
+            background: rgba(0, 0, 0, 0.7); 
+            color: white; 
+            padding: 15px; 
+            border-radius: 8px;
+            font-family: sans-serif;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <video id="my-video" playsinline></video>
+        
+        <div id="angles-result">Очікування моделі...</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+    
+    <script src="hw10.js"></script>
+
+    <script>
+        async function setupCamera() {
+            const video = document.getElementById('my-video');
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            video.srcObject = stream;
+            return new Promise((resolve) => {
+                video.onloadedmetadata = () => { video.play(); resolve(video); };
+            });
+        }
+        setupCamera().then(video => {
+            runHandpose(video, document.getElementById('angles-result'));
+        });
+    </script>
+</body>
+</html>

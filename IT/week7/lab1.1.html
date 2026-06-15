@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Сатурн</title>
+  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  
+  
+</head>
+<body>
+
+  <a-scene>
+        <a-sky src="../images/8k_stars.jpg" radius="5000"></a-sky>
+
+        <a-camera position="0 50 300" cursor-visible="true"></a-camera>
+
+        <a-light type="point" intensity="1.5" position="500 0 0"></a-light>
+        <a-light type="ambient" intensity="0.3"></a-light>
+
+        <a-entity id="tilt-container" rotation="0 0 27" position="0 0 0">
+
+        <a-entity id="rotation-container" 
+              animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear">
+        
+        <a-sphere 
+            radius="60" 
+            src="../images/2k_saturn.jpg" 
+            segments-width="128" 
+            segments-height="64">
+        </a-sphere>
+
+        <a-ring 
+            radius-inner="74.5" 
+            radius-outer="137" 
+            rotation="-90 0 0" 
+            material="src: ../images/2k_saturn_ring_alpha.png; transparent: true; side: double; opacity: 0.9">
+        </a-ring>
+        
+        </a-entity>
+        </a-entity>
+        
+        <a-entity main></a-entity>
+    </a-scene>
+</body>
+</html>
