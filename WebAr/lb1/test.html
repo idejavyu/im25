@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Тестова сторiнка</title>
+    <script data-consolejs-channel="223a463d-7b88-7558-c9d6-8d7464205060"
+        src="https://remotejs.com/agent/agent.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "../lib/three/three_151.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.151.3/examples/jsm/",
+            "mindar-image-three": "../lib/mindar/mindar-image-three.prod.js"
+          }
+        }
+        </script>
+</head>
+
+<body>
+    <button id="startButton">Start AR</button>
+    <script src="./main.js" type="module"></script>
+    <video id="videoElement" loop autoplay playsinline muted style="display:none">
+        <source src="../assets/sea.mp4" type="video/mp4">
+    </video>
+    <div id="text-left" style="font-family: sans-serif; font-weight: bold; color: white; text-align: center; line-height: 1.2;">
+    I<br>T<br>-<br>W<br>O<br>R<br>K<br>S
+</div>
+<div id="text-right" style="font-family: sans-serif; font-weight: bold; color: white; text-align: center; line-height: 1.2;">
+    I<br>T<br>-<br>W<br>O<br>R<br>K<br>S
+</div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Тестова сторiнка</title>
+        <script type="importmap">
+        {
+        "imports": {
+            "three": "../lib/three/three_151.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.151.3/examples/jsm/",
+            "mindar-image-three": "../lib/mindar/mindar-image-three.prod.js"
+        }
+        }
+        </script>
+        <style>
+            @keyframes markerFlip {
+                0%   { transform: perspective(400px) rotateY(0deg); }
+                50%  { transform: perspective(400px) rotateY(180deg); }
+                100% { transform: perspective(400px) rotateY(360deg); }
+            }
+        </style>
+    </head>
+    <body>
+        <script src="./main.js" type="module"></script>
+        <!--
+            1. Розділити вікно на 2 частини: зліва - опис завдання та зображеня маркерів, 
+            та кнопка запуску WebAR, справа - відео з камери, до натискання кнопки - заглушка.
+            2. На рамку сканування нанести зображення маркерів, які будуть використовуватись 
+            для запуску WebAR.
+        -->
+        <div id="win1" style="display: flex; height: 100vh;">
+            <div style="flex: 1; padding: 20px; box-sizing: border-box; position: relative; z-index: 3;">
+                <h1>Завдання для 5 тижня</h1>
+                <p>Розділити вікно на 2 частини: зліва - опис завдання та зображення маркерів, 
+                    та кнопка запуску WebAR, справа - відео з камери, до натискання кнопки - заглушка.
+                    На рамку сканування нанести зображення маркерів, які будуть використовуватись 
+                    для запуску WebAR.<br>
+                    Використовуючи матеріал тижня, створіть два власні маркери, що відстежуватимуться 
+                    одночасно, та прив'яжіть до них анімовані моделі й просторовий звук.
+                </p>
+                <button id="startButton">Запустити WebAR</button>
+                <div style="margin-top: 20px;">
+                    <img src="../assets/t1.jpg" alt="Marker1" style="max-width: 100%;">
+                    <img src="../assets/t2.jpg" alt="Marker2" style="max-width: 100%;">
+                </div>
+            </div>
+            <div id="win2" style="flex: 1; position: relative; overflow: hidden;">
+
+            </div>
+        </div>
+
+    </body>
+</html>

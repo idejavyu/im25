@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Тестова сторiнка - v 2</title>
+        <script type="importmap">
+        {
+            "imports": {
+                "three": "../lib/three/three_151.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.151.3/examples/jsm/",
+                "mindar-face-three": "../lib/mindar/mindar-face-three.prod.js"
+            }
+        }
+        </script>
+        <style>
+            html, body {
+                position: relative;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden
+            }
+            #flipflop {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                padding: 12px 24px;
+                background-color: #abffae;
+                color: rgb(27, 27, 27);
+                border: none;
+                border-radius: 2px;
+                cursor: pointer;
+                font-size: 20px;
+                font-family: Arial, sans-serif;
+            }
+            #flipflop:hover {
+                background-color: #3d8b40;
+            }
+            #flipflop:active {
+                background-color: #3d8b40;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="./main.js" type="module"></script>
+        <button id="flipflop" onclick="flipflop()">VR</button>
+    </body>
+</html>

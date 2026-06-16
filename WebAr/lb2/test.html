@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Віртуальна примірочна</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .ui {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        select,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/",
+            "mindar-face-three":"../lib/mindar/mindar-face-three.prod.js"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="ui">
+        <label>Окуляри:</label>
+        <select id="glasses-select" onchange="selectModel('glasses', this.value)">
+            <option value="">Без окулярів</option>
+        </select>
+
+        <label>Капелюхи:</label>
+        <select id="hat-select" onchange="selectModel('hat', this.value)">
+            <option value="">Без капелюха</option>
+        </select>
+
+        <button id="share-btn">Поділитися</button>
+    </div>
+    <div id="container"></div>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>

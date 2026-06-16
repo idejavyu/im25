@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task 09 - Face Tracking Occlusion</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            #container {
+                width: 100vw;
+                height: 100vh;
+                position: relative;
+                overflow: hidden;
+            }
+            .control-btn {
+                position: fixed;
+                right: 20px;
+                z-index: 1000;
+                padding: 10px 20px;
+                background: rgba(136, 155, 52, 0.7);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                width: 180px;
+            }
+            .control-btn:hover {
+                background: rgba(0, 0, 0, 0.9);
+            }
+            #toggle-video-btn { top: 20px; }
+            #toggle-mask-btn { top: 70px; }
+            #toggle-occluder-btn { top: 120px; }
+            #photo-btn { bottom: 30px; }
+            #switch {
+                position: fixed;
+                bottom: 5px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1000;
+             }
+        </style>
+        <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/",
+                "mindar-face-three":"../lib/mindar/mindar-face-three.prod.js"
+            }
+        }
+        </script>
+        <script type="module" src="./main.js"></script>
+    </head>
+    <body>
+        <button id="toggle-video-btn" class="control-btn">Приховати відео</button>
+        <button id="toggle-mask-btn" class="control-btn">Показати маску</button>
+        <button id="toggle-occluder-btn" class="control-btn">Показати оклюдер</button>
+        <button id="toggle-glasses-btn" class="control-btn" style="top: 170px;">Показати окуляри</button>
+        <button id="photo-btn" class="control-btn">Зробити фото</button>
+        <button id="switch">Переключитись на іншу камеру</button>
+        <div id="container"></div>
+    </body>
+</html>
